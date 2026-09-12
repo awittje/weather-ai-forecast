@@ -92,5 +92,5 @@ def training_model(model, training_data, validation_data, epochs):
 
             torch.save(
                 model.state_dict(),
-                "models/best_weather_cnn.pt"
+                "../models/best_weather_cnn.pt"
             )
