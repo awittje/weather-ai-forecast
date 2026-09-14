@@ -1,0 +1,15 @@
+Cartopy
+earthkit-data
+earthkit-plots
+eccodes
+ipykernel
+matplotlib
+netCDF4 
+notebook
+numpy
+pandas
+pyproj
+scipy
+torch
+xarray
+zarr
