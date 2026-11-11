@@ -3,8 +3,6 @@ from pathlib import Path
 import xarray as xr
 import numpy as np
 
-
-
 # ============================================================
 # Download data from CDS
 # ============================================================
@@ -120,6 +118,33 @@ def get_valid_indices(times, start, end):
             and sample_times[-1] < end
         ):
             indices.append(i)
+
+    return np.array(indices)
+
+# ============================================================
+# Get indices for a day to visualise and evaluate a single day 
+# ============================================================
+
+def get_valid_indices_day(times, day, hour=0):
+
+    indices = []
+
+    day = np.datetime64(day)
+    print(day)
+
+    for i in range(len(times) - 4):
+
+        # All five states must exist
+        sample_times = times[i:i+5]
+
+        if sample_times[0] == day:
+            print(i)
+            if hour!=0:
+                idx=int(i+hour/6)
+            else:
+                idx=i
+            print(idx)
+            indices.append(idx)
 
     return np.array(indices)
 
